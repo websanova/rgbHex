@@ -4,7 +4,7 @@ window.rgbHex = (function() {
     }
 
     function trim(arg) {
-        return arg.replace(/^\s*/, "").replace(/\s*$/, "");
+        return arg.replace(/^\s+|\s+$/g, "");
     }
 
     function isRgb(arg) {
@@ -13,8 +13,7 @@ window.rgbHex = (function() {
     }
     
     function isHex(arg) {
-        arg = trim(arg);
-        return (arg.length === 3 || arg.length === 6) && /^[0-9a-fA-F]+$/.test(arg);
+        return /^[0-9a-f]{3}$|^[0-9a-f]{6}$/i.test(trim(arg));
     }
 
     function rgbToHex(arg) {
@@ -39,33 +38,29 @@ window.rgbHex = (function() {
     }
 
     function processHex(arg) {
-        if(!isHex(arg)) { return null; }
-        else {
+        if(isHex(arg)) {
+			// Error?? If you have this: FEA wouldn't this make FEAFEA and should this be FFEEAA?
             if(arg.length === 3) { arg = arg + arg; }
 
-            return 'rgb(' + hexToRgb(arg.substring(0,2)) + ',' + hexToRgb(arg.substring(2,4)) + ',' + hexToRgb(arg.substring(4,6)) + ')';
+            return 'rgb(' + hexToRgb(arg.substr(0,2)) + ',' + hexToRgb(arg.substr(2,2)) + ',' + hexToRgb(arg.substr(4,2)) + ')';
         }
     }
 
     return function(arg) {        
         if(!arg) { return null; }
 
-        var code = null;
+        var code = null,
+			rgbRegex = /^rgba?\((.*)\);?$/,
+			hexRegex = /^#/;
+			
         arg = trim(arg.toString());
-
-        if(arg.substring(0,3) === 'rgb') {
-            if (arg.substring(0,4) === 'rgb(') { code = arg.split('rgb(')[1]; }
-            else if (arg.substring(0,5) === 'rgba(') { code = arg.split('rgba(')[1]; }
-
-            // make sure it's complete rgb() format to not give any unwanted side effects
-            if (code.slice(-1) === ')' || code.slice(-2) === ');') { return processRgb(code.split(')')[0]); }
-            else { return null; }
-        }
-        else if (arg.substring(0,1) === '#') {
-            code = arg.split('#');
-            
-            if(code.length !== 2) { return null; }
-            else { return processHex(code[1]); }
+		
+		if( rgbRegex.test(arg) )
+		{
+			return processRgb(arg.match(rgbRegex)[1]);
+		}
+        else if (hexRegex.test(arg)) {
+            return processHex(arg.split('#').reverse()[0]);
         }
         //try to parse the string without rgb or #
         else {
