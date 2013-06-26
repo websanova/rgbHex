@@ -15,17 +15,19 @@ The converter will automatically detect the input format and auto convert it all
 ## Examples
 
 ```
-rgb(255,255,255) => #FFFFFF
-rgb(255,255,255); => #FFFFFF
-rgb(255,255,255,0) => #FFFFFF
-rgba(255, 255, 255) => #FFFFFF
+rgb(255,255,255)       => #FFFFFF
+rgb(255,255,255);      => #FFFFFF
+rgb(255,255,255,0)     => #FFFFFF
+rgba(255, 255, 255)    => #FFFFFF
 rgba(255, 255, 255, 0) => #FFFFFF
-255,255,255 => #FFFFFF
-255,255,255,0 => #FFFFFF
-#FFFFFF => rgb(255,255,255)
-#FFF => rgb(255,255,255)
-FFFFFF => rgb(255,255,255)
-FFF => rgb(255,255,255)
+255,255,255            => #FFFFFF
+255,255,255,0          => #FFFFFF
+#FFFFFF                => rgb(255,255,255)
+#ffffff                => rgb(255,255,255)
+#FfFfFf                => rgb(255,255,255)
+#FFF                   => rgb(255,255,255)
+FFFFFF                 => rgb(255,255,255)
+FFF                    => rgb(255,255,255)
 ```
 
 ## jQuery
