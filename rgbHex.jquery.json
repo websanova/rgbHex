@@ -1,0 +1,36 @@
+{
+  "name": "rgbHex",
+  "title": "rgbHex jQuery Plugin",
+  "description": "A simple yet intelligent jQuery rgb / hex converter.  The converter will automatically detect the input format and auto convert it allowing you to enter either a rgb or hex value as input.",
+  "keywords": [
+    "websanova",
+    "rgb",
+    "hex"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "name": "Websanova",
+    "email": "rob@websanova.com",
+    "url": "http://websanova.com"
+  },
+  "maintainers": [
+    {
+      "name": "Websanova",
+      "email": "rob@websanova.com",
+      "url": "http://websanova.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/websanova/rgbHex#license"
+    }
+  ],
+  "bugs": "https://github.com/websanova/rgbHex/issues",
+  "homepage": "http://rgbhex.websanova.com",
+  "docs": "https://github.com/websanova/rgbHex#rgbHex",
+  "download": "https://github.com/websanova/rgbHex/tags",
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
+}
