@@ -1,6 +1,6 @@
 # rgbHex()
 
-A simple yet intelligent rgb / hex converter for JavaScript (~1.2 Kb minified, ~0.4Kb gzipped).
+A simple yet intelligent rgb / hex converter for JavaScript (~1.06 Kb minified).
 
 * [View the rgbHex demo](http://rgbhex.websanova.com)
 * [Download the lastest version of rgbHex](https://github.com/websanova/rgbHex/tags)

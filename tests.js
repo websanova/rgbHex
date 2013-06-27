@@ -61,13 +61,13 @@ test('rgb to hex - colours', function() {
 });
 
 test('hex to rgb - valid', function() {
-  equal( window.rgbHex( '255' ), 'rgb(37,82,85)' );
-  equal( window.rgbHex( '#255' ), 'rgb(37,82,85)' );
+  equal( window.rgbHex( '255' ), 'rgb(34,85,85)' );
+  equal( window.rgbHex( '#255' ), 'rgb(34,85,85)' );
   equal( window.rgbHex( '255255' ), 'rgb(37,82,85)' );
   equal( window.rgbHex( '#255255' ), 'rgb(37,82,85)' );
   equal( window.rgbHex( ' #255255 ' ), 'rgb(37,82,85)' );
   equal( window.rgbHex( 255255 ), 'rgb(37,82,85)' );
-  equal( window.rgbHex( 255 ), 'rgb(37,82,85)' );
+  equal( window.rgbHex( 255 ), 'rgb(34,85,85)' );
 });
 
 test('hex to rgb - invalid', function() {

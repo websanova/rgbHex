@@ -1,7 +1,7 @@
 {
   "name": "rgbHex",
-  "version": "1.0.0",
-  "description": "A simple yet intelligent JavaScript rgb / hex converter. (~1.4 Kb minified, ~0.4Kb gzipped).",
+  "version": "1.1.0",
+  "description": "A simple yet intelligent JavaScript rgb / hex converter. (~1.06 Kb minified).",
   "main": "rgbHex.js",
   "repository": {
     "type": "git",

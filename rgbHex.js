@@ -13,7 +13,7 @@ window.rgbHex = (function() {
     }
     
     function isHex(arg) {
-        return /^[0-9a-f]{3}$|^[0-9a-f]{6}$/i.test(trim(arg));
+        return (/^[0-9a-f]{3}$|^[0-9a-f]{6}$/i).test(trim(arg));
     }
 
     function rgbToHex(arg) {
@@ -29,7 +29,7 @@ window.rgbHex = (function() {
         arg = arg.split(',');
 
         if ( (arg.length === 3 || arg.length === 4) && isRgb(arg[0]) && isRgb(arg[1]) && isRgb(arg[2]) ) {
-            if(arg.length === 4 && !isNumeric(arg[3])) { return null; }
+            if (arg.length === 4 && !isNumeric(arg[3])) { return null; }
             return '#' + rgbToHex(arg[0]).toUpperCase() + rgbToHex(arg[1]).toUpperCase() + rgbToHex(arg[2]).toUpperCase();
         }
         else {
@@ -38,9 +38,8 @@ window.rgbHex = (function() {
     }
 
     function processHex(arg) {
-        if(isHex(arg)) {
-			// Error?? If you have this: FEA wouldn't this make FEAFEA and should this be FFEEAA?
-            if(arg.length === 3) { arg = arg + arg; }
+        if (isHex(arg)) {
+            if (arg.length === 3) { arg = arg.charAt(0) + arg.charAt(0) + arg.charAt(1) + arg.charAt(1) + arg.charAt(2) + arg.charAt(2); }
 
             return 'rgb(' + hexToRgb(arg.substr(0,2)) + ',' + hexToRgb(arg.substr(2,2)) + ',' + hexToRgb(arg.substr(4,2)) + ')';
         }
@@ -50,15 +49,14 @@ window.rgbHex = (function() {
         if(!arg) { return null; }
 
         var code = null,
-			rgbRegex = /^rgba?\((.*)\);?$/,
-			hexRegex = /^#/;
-			
+            rgbRegex = /^rgba?\((.*)\);?$/,
+            hexRegex = /^#/;
+            
         arg = trim(arg.toString());
-		
-		if( rgbRegex.test(arg) )
-		{
-			return processRgb(arg.match(rgbRegex)[1]);
-		}
+        
+        if (rgbRegex.test(arg)) {
+            return processRgb(arg.match(rgbRegex)[1]);
+        }
         else if (hexRegex.test(arg)) {
             return processHex(arg.split('#').reverse()[0]);
         }
