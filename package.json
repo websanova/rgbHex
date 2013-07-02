@@ -10,7 +10,7 @@
   "author": {
     "name" : "Websanova"
   },
-  "homepage" : "http://www.websanova.com",
+  "homepage" : "http://rgbhex.websanova.com",
   "license": "MIT, GPL",
   "dependencies": {
     "grunt-contrib-qunit": "",
