@@ -1,6 +1,6 @@
 window.rgbHex = (function() {
     function isNumeric(arg) {
-      return !isNaN(parseFloat(arg)) && isFinite(arg);
+        return !isNaN(parseFloat(arg)) && isFinite(arg);
     }
 
     function trim(arg) {
@@ -54,6 +54,9 @@ window.rgbHex = (function() {
             
         arg = trim(arg.toString());
         
+        if (arg === 'transparent') {
+            return arg;
+        }
         if (rgbRegex.test(arg)) {
             return processRgb(arg.match(rgbRegex)[1]);
         }
