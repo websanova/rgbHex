@@ -45,6 +45,10 @@ window.rgbHex = (function() {
         }
     }
 
+    function removeWhitespace(arg) {
+        return arg.replace(/\s/g, '');
+    }
+
     return function(arg) {        
         if(!arg) { return null; }
 
@@ -56,6 +60,9 @@ window.rgbHex = (function() {
         
         if (arg === 'transparent') {
             return arg;
+        }
+        if (removeWhitespace(arg) === 'rgba(0,0,0,0)') {
+            return 'transparent';
         }
         if (rgbRegex.test(arg)) {
             return processRgb(arg.match(rgbRegex)[1]);

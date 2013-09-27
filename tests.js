@@ -4,6 +4,8 @@ module('rgbHex');
 
 test('rgb to hex - valid', function() {
   equal( window.rgbHex( 'transparent' ), 'transparent' );
+  equal( window.rgbHex( 'rgba(0, 0, 0, 0)' ), 'transparent' );
+  equal( window.rgbHex( 'rgba(0,0,0,0)' ), 'transparent' );
   equal( window.rgbHex( 'rgb(255,255,255)' ), '#FFFFFF' );
   equal( window.rgbHex( 'rgb(255, 255, 255) ' ), '#FFFFFF' );
   equal( window.rgbHex( 'rgb(255, 255, 255, 0.4) ' ), '#FFFFFF' );
