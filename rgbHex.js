@@ -58,13 +58,10 @@ window.rgbHex = (function() {
             
         arg = trim(arg.toString());
         
-        if (arg === 'transparent') {
-            return arg;
-        }
-        if (removeWhitespace(arg) === 'rgba(0,0,0,0)') {
+        if (arg === 'transparent' || removeWhitespace(arg) === 'rgba(0,0,0,0)') {
             return 'transparent';
         }
-        if (rgbRegex.test(arg)) {
+        else if (rgbRegex.test(arg)) {
             return processRgb(arg.match(rgbRegex)[1]);
         }
         else if (hexRegex.test(arg)) {
