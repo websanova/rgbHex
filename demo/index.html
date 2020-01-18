@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo rgbHex</title>
+    <script src="../src/rgbHex.js"></script>
+</head>
+<body>
+    <h1>Demo rgbHex</h1>
+    
+    <input id="input" />
+    <span id="output"></span>
+
+    <script>
+        var input  = document.getElementById('input');
+        var output  = document.getElementById('output');
+
+        input.addEventListener('keyup', function () {
+            var rgbHex = window.rgbHex(input.value);
+
+            output.innerHTML = JSON.stringify(rgbHex);
+        });
+    </script>
+</body>
+</html>

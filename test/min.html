@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Test Minified rgbHex</title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+
+    <script src="../dist/rgbHex.min.js"></script> 
+</head>
+<body>
+    <div id="qunit"></div>
+    
+    <script>
+        QUnit.test('Minified', function(ass) {
+            ass.equal( window.rgbHex('#FFF').rgb            , 'rgb(255, 255, 255)' );
+            ass.equal( window.rgbHex('000').rgb             , 'rgb(0, 0, 0)'       );
+            ass.equal( window.rgbHex('rgb(255,255,255)').hex, '#ffffff'            );
+        });
+    </script>
+</body>
+</html>

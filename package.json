@@ -1,20 +1,24 @@
 {
-  "name": "rgbHex",
-  "version": "1.1.2",
-  "description": "A simple yet intelligent JavaScript rgb / hex converter. (~1.06 Kb minified).",
-  "main": "rgbHex.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/websanova/rgbHex"
-  },
-  "author": {
-    "name" : "Websanova"
-  },
-  "homepage" : "http://rgbhex.websanova.com",
-  "license": "MIT, GPL",
-  "dependencies": {
-    "grunt-contrib-qunit": "",
-    "grunt-contrib-uglify": "",
-    "grunt-contrib-jshint": ""
-  }
+    "name": "rgbHex",
+    "version": "2.0.0",
+    "description": "A simple yet intelligent JavaScript rgb / hex converter. (~1.06 Kb minified).",
+    "main": "./dist/es5-rgbHex-min.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/websanova/rgbHex"
+    },
+    "author": {
+        "name" : "Websanova"
+    },
+    "homepage" : "http://rgbhex.websanova.com",
+    "license": "MIT, GPL",
+    "dependencies": {
+        "grunt": "",
+        "grunt-contrib-qunit": "",
+        "grunt-contrib-uglify": "",
+        "grunt-contrib-jshint": ""
+    },
+    "scripts": {
+        "build": "node webpack"
+    }
 }
