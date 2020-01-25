@@ -1,7 +1,8 @@
 {
-    "name": "rgbHex",
-    "version": "2.0.0",
-    "description": "A simple yet intelligent JavaScript rgb / hex converter. (~1.06 Kb minified).",
+    "name": "@websanova/rgbhex",
+    "version": "2.0.1",
+    "description": "A simple yet intelligent JavaScript rgb / hex converter.",
+    "keywords": ["rgb", "hex", "rgbhex", "color", "code", "convert", "converter"],
     "main": "./dist/es5-rgbHex-min.js",
     "repository": {
         "type": "git",
@@ -19,6 +20,6 @@
         "grunt-contrib-jshint": ""
     },
     "scripts": {
-        "build": "node webpack"
+        "build": "./node_modules/grunt/bin/grunt"
     }
 }

@@ -13,13 +13,14 @@ A simple yet intelligent rgb / hex converter for JavaScript.
 
 ## Test
 
-There are a number of iles for testing in the `test` folder including QUnit.
+There are a number of files for testing in the `test` folder including QUnit.
 
 ## Build
 
-To build simple run:
+To build simply run:
 
 ```
+> npm install
 > npm run build
 ```
 
