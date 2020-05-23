@@ -1,6 +1,6 @@
 {
     "name": "@websanova/rgbhex",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "A simple yet intelligent JavaScript rgb / hex converter.",
     "keywords": ["rgb", "hex", "rgbhex", "color", "code", "convert", "converter"],
     "main": "./dist/es5-rgbHex-min.js",

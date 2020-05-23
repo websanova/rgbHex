@@ -1,7 +1,7 @@
 function rgbHex(val) {
     var rgb, hex, temp, r, g, b, isRgb;
     
-    val = val.replace(' ', '');
+    val = val.replace(/\s/g, '');
     val = val.replace(/^#/, '');
 
     if (
